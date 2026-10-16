@@ -1,124 +1,298 @@
-body {
-  margin: 0;
-  background: #141414;
-  color: #707070;
-  font-family: "Times New Roman", serif;
-  font-size: 13px;
+/* AeroBMSCE recruitment redesign — shared styling for all three pages.
+   Uses only the 12 requested colours, with translucency where legibility requires it.
+   No external fonts, frameworks or CSS zoom tricks. */
+:root {
+  --brand-primary: #FBD67F;
+  --brand-secondary: #F2933F;
+  --brand-warm: #A55532;
+  --bg: #310E0A;
+  --surface: #572115;
+  --action-hover: #CB6F30;
+  --surface-deep: #7E2812;
+  --border: #884531;
+  --muted: #D69771;
+  --surface-raised: #793D2D;
+  --light: #FBF9D5;
+  --soft-warm: #A86854;
+  --text: var(--light);
+  --focus: var(--brand-primary);
+  --radius: 10px;
+  --page-max: 1320px;
+  --side-padding: clamp(18px, 3.8vw, 56px);
+  --section-space: clamp(48px, 6vw, 88px);
 }
 
-.notice {
-  background: #2a2a2a;
-  color: #888;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  padding: 4px 10px;
-}
+/* Foundations and typography */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 104px; }
+body { margin: 0; min-width: 0; background: var(--bg); color: var(--text); font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.65; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4 { margin-top: 0; line-height: 1.15; letter-spacing: -.02em; font-weight: 700; }
+p { margin: 0 0 1rem; }
+ul { padding-left: 1.25rem; }
+li { margin-block: .4rem; }
+a { color: var(--brand-primary); text-underline-offset: .2em; }
+a:hover { color: var(--brand-secondary); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+.wrap { width: 100%; max-width: var(--page-max); margin-inline: auto; padding-inline: var(--side-padding); }
+[id] { scroll-margin-top: 110px; }
+.display-heading { font-size: clamp(2rem, 4.3vw, 3rem); margin: .55rem 0 1.25rem; max-width: 19ch; }
+.eyebrow { display: inline-block; color: var(--brand-primary); font-size: .78rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.section-intro { margin-bottom: clamp(22px, 3vw, 36px); }
+.section-intro p, .page-intro p { max-width: 64ch; font-size: 1.075rem; color: var(--muted); line-height: 1.7; }
+.text-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; padding-block: 9px; }
+.button { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: 11px 19px; border: 1px solid transparent; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .92rem; line-height: 1.4; text-align: center; transition: background-color .2s, border-color .2s, color .2s; }
+.button:hover { text-decoration: none; }
+.button-gold { background: var(--brand-primary); color: var(--bg); }
+.button-gold:hover { background: var(--brand-secondary); color: var(--bg); }
+.button-outline { border-color: var(--brand-primary); color: var(--light); background: var(--surface); }
+.button-outline:hover { border-color: var(--brand-secondary); background: var(--surface-raised); color: var(--light); }
 
-.wrap {
-  width: 1480px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Header — intentionally uses a light surface for the ORIGINAL black-wing logo.
+   The trimmed image keeps the original artwork unchanged. */
+.notice { background: var(--surface-deep); color: var(--light); padding: 7px var(--side-padding); font-size: .75rem; text-align: center; line-height: 1.5; }
+.top { position: sticky; top: 0; z-index: 1000; background: var(--light); border-bottom: 2px solid var(--brand-warm); }
+/* Wider than body containers so the logo actually anchors toward the left edge. */
+.navbar.wrap { max-width: none; padding-inline: clamp(16px, 2.6vw, 44px); }
+.navbar { display: flex; justify-content: space-between; align-items: center; gap: 22px; min-height: 84px; }
+.brand { display: inline-flex; align-items: center; flex: 0 0 auto; line-height: 0; }
+.brand img { width: clamp(206px, 20vw, 268px); height: auto; }
+.nav { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: clamp(5px, 1.4vw, 22px); }
+.nav a { display: inline-flex; min-height: 43px; align-items: center; white-space: nowrap; padding: 8px 9px; border-bottom: 3px solid transparent; border-radius: 2px; color: var(--bg); font-size: .92rem; font-weight: 650; text-decoration: none; transition: color .18s, background-color .18s, border-color .18s; }
+.nav a:hover, .nav a:focus-visible { color: var(--surface-deep); background: var(--brand-primary); border-bottom-color: var(--surface-deep); }
+.nav a.active { color: var(--surface-deep); border-bottom-color: var(--brand-warm); }
+/* On the Contact anchor, visually switch the active highlight from Partners
+   to Contact. Partners is still the current HTML page (aria-current="page"). */
+body:has(#contact:target) .nav a.active[href="partners.html"] {
+  color: var(--bg);
+  background: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
 }
+body:has(#contact:target) .nav a[href="#contact"] {
+  color: var(--surface-deep);
+  background: var(--brand-primary);
+  border-bottom-color: var(--surface-deep);
+}
+.menu-toggle { display: none; align-items: center; justify-content: center; min-height: 42px; padding: 7px 14px; border-radius: 5px; border: 1px solid var(--surface-deep); color: var(--bg); background: transparent; font: inherit; font-weight: 700; cursor: pointer; }
+.menu-toggle:hover, .menu-toggle[aria-expanded="true"] { background: var(--brand-primary); }
 
-/* header + nav */
-.top {
-  background: #7b2339;
-  padding: 10px 0;
-}
-.top img {
-  width: 420px;
-  height: 200px;
-  float: left;
-}
-.nav {
-  float: right;
-  margin-top: 90px;
-  font-family: "Trebuchet MS", sans-serif;
-  font-size: 12px;
-}
-.nav a {
-  margin-left: 22px;
-  color: #d08aa0;
-}
-.clear { clear: both; }
-
-a { color: #a03358; text-decoration: none; }
-a:hover { text-decoration: none; }
-a:focus { outline: none; }
-
-/* hero */
+/* Homepage hero — actual team photo has its OWN zone, not hidden behind the copy. */
+/* Split hero: each half has its own visual space. Centre the introduction
+   inside the left panel instead of anchoring it against the photograph. */
 .hero {
-  height: 420px;
-  background: url(images/photo2.jpg) center 70% / cover;
+  position: relative;
+  display: flex;
+  min-height: clamp(515px, 53vw, 640px);
+  align-items: stretch;
+  background: var(--surface-deep);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 54%;
+  background: var(--surface) url("images/photo2.jpg") center / cover no-repeat;
+  border-left: 2px solid var(--brand-warm);
+}
+.hero-layout.wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46%;
+  max-width: none;
+  margin: 0;
+  padding: 42px clamp(20px, 3.4vw, 58px);
 }
 .hero .box {
-  width: 520px;
-  margin-left: 60px;
-  position: relative;
-  top: 90px;
-  padding: 24px 28px;
-  background: url(images/bg.jpg);
+  width: min(100%, 540px);
+  margin: auto;
+  padding: clamp(22px, 3vw, 38px);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--brand-primary);
+  border-radius: 4px;
 }
-.hero h1 { color: #f5b730; font-family: Arial, sans-serif; font-size: 44px; margin: 0 0 8px 0; }
-.hero p { color: #f5b730; font-size: 13px; margin: 0; }
-.hero .tag { font-size: 18px; margin-bottom: 10px; }
+.hero h1 { color: var(--light); font-size: clamp(2.8rem, 5vw, 4rem); margin: .25rem 0 .35rem; }
+.hero p { max-width: 45ch; font-size: 1rem; line-height: 1.6; color: var(--light); }
+.hero .tag { color: var(--brand-primary); font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 650; }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 11px; margin-top: 24px; }
 
-.banner { width: 1480px; height: 160px; display: block; }
+/* Homepage sections and imagery */
+.home-intro { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: clamp(24px, 5vw, 70px); padding-block: var(--section-space); }
+.home-intro > div { min-width: 0; }
+.home-intro p { max-width: 59ch; color: var(--text); font-size: clamp(1rem, 1.4vw, 1.11rem); line-height: 1.75; }
+.feature-photo { margin: 0; min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.feature-photo img { width: 100%; aspect-ratio: 16 / 11; object-fit: contain; object-position: center; padding: clamp(8px, 1.5vw, 22px); }
+.feature-photo figcaption { padding: 11px 18px 13px; font-size: .85rem; color: var(--brand-primary); border-top: 1px solid var(--border); }
+.home-programs, .home-showcase { padding-block: 20px var(--section-space); }
+.feature-grid, .showcase-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.feature-card, .content-panel { border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); padding: clamp(22px, 2.5vw, 30px); min-width: 0; }
+.feature-card h3 { margin: 11px 0 14px; font-size: clamp(1.22rem, 2vw, 1.5rem); }
+.feature-card ul { margin-bottom: 0; }
+.feature-no { color: var(--brand-primary); font-weight: 750; }
+.showcase-grid figure { margin: 0; min-width: 0; border: 1px solid var(--border); background: var(--surface); border-radius: 8px; overflow: hidden; }
+.showcase-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+/* Portrait competition photo: keep the drone and surrounding context visible. */
+.showcase-grid figure:last-child img { object-fit: contain; }
+.home-cta { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: clamp(24px, 3vw, 38px); margin: 0 0 var(--section-space); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-deep); }
+.home-cta h2 { font-size: clamp(1.65rem, 2.8vw, 2.3rem); margin: .5rem 0; }
+.home-cta p { max-width: 60ch; color: var(--text); }
+.home-cta .button { flex: 0 0 auto; }
 
-/* headings */
-h4.sec {
-  color: #f5b730;
-  font-family: Impact, "Arial Black", sans-serif;
-  font-size: 22px;
-  font-weight: normal;
-  margin: 40px 0 8px 0;
+/* Secondary page introductions and team overview */
+.page-intro { padding: clamp(45px, 5vw, 72px) 0 clamp(26px, 4vw, 50px); }
+.page-intro .display-heading { max-width: 23ch; }
+.journey-overview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 24px; padding-bottom: 30px; }
+.journey-overview > div, .journey-overview > p { margin: 0; min-width: 0; border: 1px solid var(--border); border-radius: var(--radius); padding: 25px; background: var(--surface); }
+.journey-overview h2 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); color: var(--brand-primary); }
+.journey-photos { padding-block: var(--section-space); }
+.slideshow { width: min(100%, 980px); margin: 22px auto 0; }
+/* Shorter gallery viewport; object-fit: contain keeps the complete photographs. */
+.slide-container { position: relative; width: 100%; height: clamp(280px, 34vw, 430px); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+#slide { display: block; width: 100%; height: 100%; max-width: none; object-fit: contain; object-position: center; }
+.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--brand-primary); border-radius: 50%; color: var(--bg); background: var(--brand-primary); font-size: 1.25rem; cursor: pointer; }
+.slide-btn:hover { background: var(--brand-secondary); }
+.prev { left: 14px; }
+.next { right: 14px; }
+.slide-dots { display: flex; justify-content: center; gap: 12px; padding-top: 17px; }
+.dot { width: 15px; height: 15px; border: 1px solid var(--brand-primary); border-radius: 50%; padding: 0; background: transparent; cursor: pointer; }
+.dot.active, .dot:hover { background: var(--brand-primary); }
+
+/* Journey statistics and awards — preserves original result wording */
+.achievements { padding: 35px 0 var(--section-space); }
+.achievement-heading { max-width: 720px; text-align: center; margin: 0 auto 42px; }
+.achievement-heading .display-heading { max-width: none; }
+.achievement-heading p { color: var(--muted); font-size: 1.08rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0 0 68px; }
+.stat-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; min-width: 0; padding: 24px 12px; background: var(--surface-deep); border: 1px solid var(--border); border-radius: var(--radius); }
+.stat-card strong { color: var(--brand-primary); line-height: 1.2; font-size: clamp(1.7rem, 3vw, 2.6rem); }
+.stat-card span { max-width: 25ch; font-size: .9rem; color: var(--light); }
+.achievement-year { margin-bottom: clamp(36px, 5vw, 64px); }
+.year-title { padding-left: 14px; margin-bottom: 22px; border-left: 4px solid var(--brand-primary); font-size: clamp(1.35rem, 2.2vw, 1.75rem); color: var(--brand-primary); }
+.achievement-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.achievement-card { display: flex; flex-direction: column; min-width: 0; min-height: 210px; padding: clamp(22px, 2.5vw, 30px); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.achievement-card.featured { border-color: var(--brand-primary); border-left-width: 4px; }
+.achievement-rank { color: var(--brand-primary); font-size: .85rem; font-weight: 800; letter-spacing: .05em; }
+.achievement-card h3 { font-size: clamp(1.18rem, 1.8vw, 1.45rem); margin: 14px 0 10px; }
+.achievement-card p { color: var(--text); line-height: 1.7; margin-bottom: 12px; }
+.card-footer { margin-top: auto; padding-top: 13px; border-top: 1px solid var(--border); color: var(--brand-primary); font-size: .82rem; font-weight: 700; }
+.achievement-closing { text-align: center; color: var(--brand-primary); font-weight: 700; }
+
+/* Collaboration, tiers and logo groups */
+.partners-section { padding-block: 24px var(--section-space); }
+.partner-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.partner-info-grid .content-panel:last-child { grid-column: 1 / -1; }
+.content-panel ul { max-width: 92ch; }
+.content-panel h2, .content-panel h3 { color: var(--brand-primary); }
+.panel-heading { margin: 24px 0 12px; font-size: clamp(1.22rem, 2vw, 1.6rem); }
+.content-panel .panel-heading:first-child { margin-top: 0; }
+.content-panel ul { margin-bottom: 22px; }
+.tier-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(20px, 2.4vw, 28px); min-width: 0; }
+.tier-title { display: flex; align-items: center; gap: 15px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.tier-title img { flex: 0 0 58px; width: 58px; height: 58px; object-fit: contain; }
+.tier-title h3 { color: var(--brand-primary); font-size: 1.15rem; margin: 0 0 4px; }
+.tier-title p { font-size: .88rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.tier-card ul { margin-bottom: 0; }
+.ecosystem-group { margin: 34px 0; }
+.ecosystem-group h3 { font-size: 1.38rem; margin: 0 0 18px; }
+.partner-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.logo-tile { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 118px; padding: 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--light); }
+.logo-tile img { display: block; width: auto; max-width: 100%; height: auto; max-height: 72px; object-fit: contain; }
+/* White lettering in these ORIGINAL transparent PNGs needs a dark surface. */
+.logo-tile--dark { background: var(--surface); }
+
+/* Contact section — genuine supplied details only */
+.contact-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 30px; padding: clamp(24px, 4vw, 45px); margin: 25px 0 var(--section-space); border: 1px solid var(--brand-primary); border-radius: var(--radius); background: var(--surface); }
+.contact-panel h2 { font-size: clamp(1.8rem, 3.5vw, 2.75rem); margin: 8px 0 14px; }
+.contact-panel > img { width: clamp(145px, 20vw, 240px); height: auto; }
+.contact-intro { max-width: 60ch; }
+.contact-details { margin: 22px 0 25px; display: grid; gap: 10px; }
+.contact-details > div { display: grid; grid-template-columns: minmax(115px, 150px) minmax(0, 1fr); align-items: start; gap: 18px; }
+.contact-details dt { font-weight: 700; color: var(--brand-primary); }
+.contact-details dd { margin: 0; overflow-wrap: anywhere; }
+.contact-details dd a { color: var(--light); text-decoration-thickness: 1px; }
+.contact-details dd a:hover { color: var(--brand-primary); }
+
+/* Footer */
+.site-footer { padding: 24px 0; background: var(--surface-deep); border-top: 1px solid var(--border); }
+.footer-inner { display: flex; justify-content: center; align-items: center; text-align: center; font-size: .84rem; }
+
+/* Responsive: desktop → tablet → phone, without overflow hiding or zoom simulation. */
+@media (min-width: 951px) and (max-width: 1200px) {
+  .hero::before { width: 52%; }
+  .hero-layout.wrap { width: 48%; }
 }
-h1.sec {
-  color: #f5b730;
-  font-family: Impact, "Arial Black", sans-serif;
-  font-size: 26px;
-  font-weight: normal;
-  margin: 40px 0 8px 0;
+@media (max-width: 1100px) {
+  .feature-grid, .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .navbar { gap: 10px; }
+  .brand img { width: 215px; }
+  .nav { gap: 4px; }
 }
-h2.sub {
-  color: #f5b730;
-  font-family: "Trebuchet MS", sans-serif;
-  font-size: 15px;
-  margin: 24px 0 6px 0;
+@media (max-width: 950px) {
+  .hero { display: block; min-height: 0; }
+  .hero::before {
+    position: static;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    border-left: 0;
+  }
+  .hero-layout.wrap { width: 100%; padding: 24px var(--side-padding) 32px; }
+  .hero .box { width: min(100%, 660px); }
 }
-
-p, li { line-height: 1.3; }
-li { margin-bottom: 3px; }
-
-/* journey page */
-.slide-box { float: right; width: 420px; margin-left: 30px; }
-#slide { width: 420px; }
-.gallery img { width: 300px; height: 170px; margin: 0 14px 14px 0; }
-.ms {
-  background: #6a1b34;
-  color: #d8c3c9;
-  padding: 16px 20px;
-  font-size: 12px;
-  line-height: 1.25;
-  margin-top: 10px;
+@media (max-width: 850px) {
+  html { scroll-padding-top: 90px; }
+  [id] { scroll-margin-top: 92px; }
+  .navbar { min-height: 76px; flex-wrap: wrap; gap: 8px; padding-block: 12px; }
+  .brand img { width: clamp(175px, 29vw, 220px); }
+  .menu-toggle { display: inline-flex; margin-left: auto; }
+  .nav { display: none; flex-basis: 100%; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-top: 7px; }
+  .nav.is-open { display: flex; }
+  .nav a { display: flex; min-height: 45px; border-bottom: 1px solid var(--border); white-space: normal; padding-inline: 12px; }
+  .nav a.active { border-left: 3px solid var(--brand-warm); }
+  .hero-layout.wrap { padding-block: 0 30px; }
+  .hero .box { width: min(100%, 660px); border: 0; border-bottom: 2px solid var(--brand-primary); border-radius: 0; padding: 25px 0 30px; }
+  .hero::before { background-size: cover; }
+  .home-intro { grid-template-columns: 1fr; }
+  .feature-photo { max-width: 740px; }
+  .journey-overview, .tier-grid, .partner-info-grid { grid-template-columns: 1fr; }
+  .partner-info-grid .content-panel:last-child { grid-column: auto; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .slide-container { height: clamp(245px, 50vw, 360px); }
+  .contact-panel { grid-template-columns: 1fr; }
+  .contact-panel > img { justify-self: end; }
 }
-.credit { color: #f5b730; font-size: 15px; font-weight: bold; }
-
-/* tiers */
-table.tiers { width: 1440px; border-collapse: collapse; margin-top: 10px; }
-table.tiers td {
-  width: 360px;
-  background: #6a1b34;
-  color: #d8c3c9;
-  font-size: 11px;
-  vertical-align: top;
-  padding: 10px;
-  border: 1px solid #141414;
+@media (max-width: 600px) {
+  /* Tablet/mobile hero already stacks imagery above the original content panel. */
+  .hero h1 { font-size: clamp(2.55rem, 10vw, 3.3rem); }
+  .hero-actions { gap: 10px; }
+  .hero-actions .button { flex: 1 1 180px; }
+  .feature-grid, .showcase-grid, .achievement-grid { grid-template-columns: 1fr; }
+  .showcase-grid img { aspect-ratio: 16 / 10; }
+  .home-cta { flex-direction: column; align-items: flex-start; }
+  .home-cta .button { flex: initial; }
+  .partner-logos { gap: 11px; }
+  .logo-tile { min-height: 96px; padding: 12px; }
+  .logo-tile img { max-height: 62px; }
+  .slide-container { height: clamp(215px, 63vw, 290px); }
+  .slide-btn { width: 38px; height: 38px; }
+  .prev { left: 8px; }
+  .next { right: 8px; }
 }
-table.tiers td img { width: 40px; height: 40px; }
-table.tiers td b { color: #f5b730; font-size: 14px; }
-
-/* logos */
-.logos img { width: 140px; height: 60px; margin: 6px 22px 6px 0; }
-
-.footer { margin: 60px 0 20px 0; font-size: 10px; color: #555; }
+@media (max-width: 390px) {
+  .navbar.wrap { padding-inline: 14px; }
+  .brand img { width: 170px; }
+  .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-details > div { grid-template-columns: 1fr; gap: 2px; }
+  .stat-card { padding: 19px 8px; }
+  .stat-card span { font-size: .82rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

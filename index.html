@@ -1,66 +1,211 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex">
-<title>AeroBMSCE</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="notice">Practice website for the AeroBMSCE web development recruitment task. This is not the official AeroBMSCE website.</div>
-
-<div class="top">
-  <div class="wrap">
-    <img src="images/header-logo.png">
-    <div class="nav">
-      <a href="#">Home</a>
-      <a href="#who">Who We Are</a>
-      <a href="journey.html">Journey</a>
-      <a href="partners.html">Partners</a>
-      <a href="contact.html">Contact</a>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="noindex" name="robots"/>
+  <meta content="AeroBMSCE aerospace and UAV student team &mdash; recruitment task redesign demo." name="description"/>
+  <title>
+   Home | AeroBMSCE
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body>
+  <div class="notice">
+   Practice website for the AeroBMSCE web development recruitment task. This is not the official AeroBMSCE website.
+  </div>
+  <header class="top">
+   <div class="wrap navbar">
+    <a aria-label="AeroBMSCE homepage" class="brand" href="index.html">
+     <img alt="AeroBMSCE &mdash; Above Gravity, Beyond Limits" decoding="async" height="261" loading="eager" src="images/header-logo-trimmed.png" width="1142"/>
+    </a>
+    <button aria-controls="site-navigation" aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" type="button">
+     Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav" id="site-navigation">
+     <a aria-current="page" class="active" href="index.html">
+      Home
+     </a>
+     <a href="index.html#who">
+      Who We Are
+     </a>
+     <a href="journey.html">
+      Our Journey
+     </a>
+     <a href="partners.html">
+      Partners
+     </a>
+     <a href="partners.html#contact">
+      Contact
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section aria-label="AeroBMSCE team showcasing aircraft, with AeroBMSCE introduction" class="hero">
+    <div class="wrap hero-layout">
+     <div class="box">
+      <span class="eyebrow">
+       AEROSPACE &middot; INNOVATION &middot; TEAMWORK
+      </span>
+      <h1>
+       AeroBMSCE
+      </h1>
+      <p class="tag">
+       Above Gravity. Beyond Limits.
+      </p>
+      <p>
+       One of India's longest-running competitive aerospace and UAV teams with international flight history.
+      </p>
+      <div class="hero-actions">
+       <a class="button button-gold" href="journey.html#achievements">
+        Explore achievements &rarr;
+       </a>
+       <a class="button button-outline" href="partners.html#contact">
+        Collaborate with us
+       </a>
+      </div>
+     </div>
     </div>
-    <div class="clear"></div>
-  </div>
-</div>
-
-<div class="hero">
-  <div class="box">
-    <h1>AeroBMSCE</h1>
-    <p class="tag">&bull; Above Gravity &bull; &nbsp;&nbsp;&nbsp; &bull; Beyond Limits &bull;</p>
-    <p>ONE OF INDIA’S LONGEST-RUNNING COMPETITIVE AEROSPACE &amp; UAV TEAM WITH INTERNATIONAL FLIGHT HISTORY</p>
-  </div>
-</div>
-
-<img class="banner" src="images/photo8.jpg">
-
-<div class="wrap">
-
-  <a name="who"></a>
-  <h4 class="sec">WHO WE ARE</h4>
-  <p>AeroBMSCE is the official aerospace, aeromodelling, and unmanned systems innovation club of BMS College of Engineering, operating from Propel Lab–3. Established in 2012, the club brings together engineers from 10+ departments to design, build, and test advanced aircraft, drones, and autonomous systems.</p>
-
-  <h4 class="sec">WHAT WE DO</h4>
-  <ul>
-    <li>Competitive aircraft &amp; UAV design</li>
-    <li>Drone racing &amp; autonomy</li>
-    <li>Industry-grade fabrication &amp; testing</li>
-    <li>Talent development through real-world engineering</li>
-  </ul>
-
-  <h4 class="sec">WHY IT MATTERS</h4>
-  <ul>
-    <li>Engineers trained on real constraints</li>
-    <li>Talent exposure before graduation</li>
-    <li>Brand visibility in elite technical ecosystems</li>
-  </ul>
-
-  <h4 class="sec">OUR VISION</h4>
-  <p>We envision AeroBMSCE as a leading aerospace and unmanned systems research group, renowned for design excellence, innovation, and competitive success. We aim to cultivate future leaders in the aerospace and drone industry, establishing a legacy of engineering excellence that inspires students worldwide.</p>
-
-  <p style="margin-top:30px">Want to know more about what we have achieved? <a href="journey.html">Click here</a>. Interested in working with us? <a href="partners.html">Click here</a>.</p>
-
-</div>
-
-</body>
+   </section>
+   <div class="wrap">
+    <section class="home-intro" id="who">
+     <div>
+      <span class="eyebrow">
+       WHO WE ARE
+      </span>
+      <h2 class="display-heading">
+       Built to push boundaries.
+      </h2>
+      <p>
+       AeroBMSCE is the official aerospace, aeromodelling, and unmanned systems innovation club of BMS College of Engineering, operating from Propel Lab&ndash;3. Established in 2012, the club brings together engineers from 10+ departments to design, build, and test advanced aircraft, drones, and autonomous systems.
+      </p>
+      <a class="text-link" href="journey.html">
+       Meet our journey &rarr;
+      </a>
+     </div>
+     <figure class="feature-photo">
+      <img alt="Supplied AeroBMSCE fixed-wing aircraft CAD model" height="385" loading="lazy" src="images/cad-plane.png" width="563"/>
+      <figcaption>
+       Aircraft design &mdash; from concept to flight.
+      </figcaption>
+     </figure>
+    </section>
+    <section class="home-programs">
+     <div class="section-intro">
+      <span class="eyebrow">
+       WHAT DRIVES US
+      </span>
+      <h2 class="display-heading">
+       Engineering in action
+      </h2>
+     </div>
+     <div class="feature-grid">
+      <article class="feature-card">
+       <span class="feature-no">
+        01
+       </span>
+       <h3>
+        What we do
+       </h3>
+       <ul>
+        <li>
+         Competitive aircraft and UAV design
+        </li>
+        <li>
+         Drone racing and autonomy
+        </li>
+        <li>
+         Industry-grade fabrication and testing
+        </li>
+        <li>
+         Talent development through real-world engineering
+        </li>
+       </ul>
+      </article>
+      <article class="feature-card">
+       <span class="feature-no">
+        02
+       </span>
+       <h3>
+        Why it matters
+       </h3>
+       <ul>
+        <li>
+         Engineers trained on real constraints
+        </li>
+        <li>
+         Exposure to practical engineering before graduation
+        </li>
+        <li>
+         Visibility in competitive technical ecosystems
+        </li>
+       </ul>
+      </article>
+      <article class="feature-card">
+       <span class="feature-no">
+        03
+       </span>
+       <h3>
+        Our vision
+       </h3>
+       <p>
+        To be a leading aerospace and unmanned systems research group, known for design excellence, innovation, and competitive success &mdash; while inspiring future aerospace engineers.
+       </p>
+      </article>
+     </div>
+    </section>
+    <section class="home-showcase">
+     <div class="section-intro">
+      <span class="eyebrow">
+       OUR WORK, OUR PEOPLE
+      </span>
+      <h2 class="display-heading">
+       More than a classroom.
+      </h2>
+      <p>
+       Real projects. Real flight tests. Real teamwork.
+      </p>
+     </div>
+     <div class="showcase-grid">
+      <figure>
+       <img alt="AeroBMSCE members in a group photograph" loading="lazy" src="images/photo5.jpg"/>
+      </figure>
+      <figure>
+       <img alt="AeroBMSCE team members pictured outdoors" loading="lazy" src="images/photo6.jpg"/>
+      </figure>
+      <figure>
+       <img alt="AeroBMSCE drone on display at an aeromodelling event" loading="lazy" src="images/photo7.jpg"/>
+      </figure>
+     </div>
+    </section>
+    <section class="home-cta">
+     <div>
+      <span class="eyebrow">
+       THE JOURNEY CONTINUES
+      </span>
+      <h2>
+       Every milestone is a new takeoff.
+      </h2>
+      <p>
+       Explore competition results, team achievements and the collaborations behind the work.
+      </p>
+     </div>
+     <a class="button button-gold" href="journey.html#achievements">
+      View our legacy &rarr;
+     </a>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer">
+   <div class="wrap footer-inner">
+    <span>
+     &copy; AeroBMSCE &middot; Recruitment task demonstration
+    </span>
+   </div>
+  </footer>
+ </body>
 </html>
+

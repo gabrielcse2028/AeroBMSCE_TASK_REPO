@@ -1,108 +1,427 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex">
-<title>AeroBMSCE</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
-</head>
-<body>
-
-<div class="notice">Practice website for the AeroBMSCE web development recruitment task. This is not the official AeroBMSCE website.</div>
-
-<div class="top">
-  <div class="wrap">
-    <img src="images/header-logo.png">
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="#">Journey</a>
-      <a href="partners.html">Partners</a>
-    </div>
-    <div class="clear"></div>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="noindex" name="robots"/>
+  <meta content="AeroBMSCE aerospace and UAV student team &mdash; recruitment task redesign demo." name="description"/>
+  <title>
+   Our Journey | AeroBMSCE
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body>
+  <div class="notice">
+   Practice website for the AeroBMSCE web development recruitment task. This is not the official AeroBMSCE website.
   </div>
-</div>
-
-<div class="wrap">
-
-  <div class="slide-box">
-    <img id="slide" src="images/photo1.jpg">
-  </div>
-
-  <h1 class="sec">OUR JOURNEY &amp; IMPACT</h1>
-  <ul>
-    <li>Team Yaksha - International Competitions</li>
-    <li>Team Blue Impulse - Aeromodelling</li>
-    <li>TeamFlying Phantoms - Drone Development</li>
-    <li>Team Vectors - Drone Racing</li>
-  </ul>
-  <p>Since we have started, we’ve taken on and successfully completed 75 + projects, collaborating with students from more than 10 departments across the college. Along the way, we’ve produced 50+ research papers, reports, and certifications that highlight the creativity and dedication of our members. Our competitive spirit shines through our teams that represent us at various prestigious events:</p>
-
-  <p class="credit">Credibility Summary<br>16+ years | 75+ projects | 20+ podium finishes | International flight history</p>
-
-  <div class="clear"></div>
-
-  <div class="gallery">
-    <img src="images/photo5.jpg">
-    <img src="images/photo6.jpg">
-    <img src="images/photo7.jpg">
-  </div>
-
-  <h1 class="sec">Our Milestones</h1>
-
-  <div class="ms">
-    2026 SEASON<br>
-    <b>SAE International Aero Design West</b><br>
-    <b>2nd Place Internationally under MATLAB Simulation Awards.</b> Overall #16 Globally in Micro Class Category<br>
-    <b>Fort Worth, Texas, USA</b><br><br>
-    SAE Aerothon<br>
-    <b>1st Place under Unique Technology development at ADDC 2026.</b><br><br>
-
-    2025 SEASON<br>
-    SAE Aerothon<br>
-    <b>2nd place overall, ₹1,25,000 cash prize</b> (Nov 2025)<br><br>
-    SAE-Drone Design Challenge<br>
-    <b>1st place - Best Technical Presentation, ₹10,000 cash prize</b> (May 2025)<br><br>
-    SAE Autonomous Drone Design Challenge<br>
-    <b>1st place - Best Innovation ₹5000 cash prize</b> (April 2025)<br><br>
-
-    2024 SEASON<br>
-    NITK Drone Racing Competition<br>
-    <b>2nd place</b> (Oct 18-20,2024)<br><br>
-    Global Academy of Technology (Drone Racing)<br>
-    <b>1st place</b> (Nov 2024)<br><br>
-    SAE International Aero Design West<br>
-    <b>12th place globally</b> (Aug 2024)<br><br>
-
-    2022 SEASON<br>
-    SAE Aerothon<br>
-    <b>3rd place, ₹50,000 cash prize</b><br><br>
-    lll South India Exhibition<br>
-    <b>2nd place, ₹15000 cash prize</b><br>
-    Kalpataru Institute of Technology,Tiptur,Karnataka<br><br>
-    AI-VTOL (Techfest,IIT Bombay)<br>
-    <b>4th place nationally</b><br><br>
-    SAE International Aero Design West<br>
-    <b>9th Place (Design report), 11th Place (Technical Presentation) Globally</b><br><br>
-
-    2020 SEASON<br>
-    SAE-India<br>
-    <b>1st place overall, ₹1,00,000 cash prize</b><br>
-    Team Blue Impulse won Nationally<br><br>
-    SAE Aero Design,West<br>
-    <b>8th place in design standings globally</b><br><br>
-
-    2018 SEASON<br>
-    SAE INDIA<br>
-    Anna University, Chennai<br>
-    <b>3rd place overall,</b><br>
-    <b>2nd place in Design Report</b><br><br>
-    AND MANY MORE...
-  </div>
-
-  <div class="footer">&copy; AeroBMSCE</div>
-
-</div>
-
-</body>
+  <header class="top">
+   <div class="wrap navbar">
+    <a aria-label="AeroBMSCE homepage" class="brand" href="index.html">
+     <img alt="AeroBMSCE &mdash; Above Gravity, Beyond Limits" decoding="async" height="261" loading="eager" src="images/header-logo-trimmed.png" width="1142"/>
+    </a>
+    <button aria-controls="site-navigation" aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" type="button">
+     Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav" id="site-navigation">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="index.html#who">
+      Who We Are
+     </a>
+     <a aria-current="page" class="active" href="journey.html">
+      Our Journey
+     </a>
+     <a href="partners.html">
+      Partners
+     </a>
+     <a href="partners.html#contact">
+      Contact
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <div class="wrap">
+    <section class="page-intro">
+     <span class="eyebrow">
+      OUR JOURNEY &amp; IMPACT
+     </span>
+     <h1 class="display-heading">
+      Above gravity. Beyond limits.
+     </h1>
+     <p>
+      From design labs to international skies &mdash; discover the teams, projects and milestones that shape AeroBMSCE.
+     </p>
+    </section>
+    <section aria-label="AeroBMSCE teams" class="journey-overview">
+     <div>
+      <h2>
+       Teams that make it possible
+      </h2>
+      <ul>
+       <li>
+        Team Yaksha &mdash; International Competitions
+       </li>
+       <li>
+        Team Blue Impulse &mdash; Aeromodelling
+       </li>
+       <li>
+        Team Flying Phantoms &mdash; Drone Development
+       </li>
+       <li>
+        Team Vectors &mdash; Drone Racing
+       </li>
+      </ul>
+     </div>
+     <p>
+      Since starting, the club reports completing 75+ projects with students across more than 10 departments, as well as producing 50+ research papers, reports and certifications.
+     </p>
+    </section>
+    <section aria-labelledby="photos-heading" class="journey-photos">
+     <div class="section-intro">
+      <span class="eyebrow">
+       INSIDE THE TEAM
+      </span>
+      <h2 class="display-heading" id="photos-heading">
+       Moments of flight &amp; teamwork
+      </h2>
+     </div>
+     <div aria-label="AeroBMSCE team and aircraft photographs" aria-roledescription="carousel" class="slideshow">
+      <div class="slide-container">
+       <img alt="AeroBMSCE team photograph" height="432" id="slide" src="images/photo1.jpg" width="768"/>
+       <button aria-label="Previous photograph" class="slide-btn prev" type="button">
+        ❮
+       </button>
+       <button aria-label="Next photograph" class="slide-btn next" type="button">
+        ❯
+       </button>
+      </div>
+      <div aria-label="Choose photograph" class="slide-dots">
+       <button aria-current="true" aria-label="Show photograph 1" class="dot active" type="button">
+       </button>
+       <button aria-label="Show photograph 2" class="dot" type="button">
+       </button>
+       <button aria-label="Show photograph 3" class="dot" type="button">
+       </button>
+       <button aria-label="Show photograph 4" class="dot" type="button">
+       </button>
+      </div>
+     </div>
+    </section>
+    <section class="achievements" id="achievements">
+     <div class="achievement-heading">
+      <span class="eyebrow">
+       THE AEROBMSCE LEGACY
+      </span>
+      <h2 class="display-heading">
+       Our achievements
+      </h2>
+      <p>
+       Years of engineering, collaboration, dedication and competitive excellence.
+      </p>
+     </div>
+     <div class="stats-grid">
+      <div class="stat-card">
+       <strong>
+        75+
+       </strong>
+       <span>
+        Projects
+       </span>
+      </div>
+      <div class="stat-card">
+       <strong>
+        20+
+       </strong>
+       <span>
+        Podium finishes
+       </span>
+      </div>
+      <div class="stat-card">
+       <strong>
+        50+
+       </strong>
+       <span>
+        Research works, reports &amp; certifications
+       </span>
+      </div>
+      <div class="stat-card">
+       <strong>
+        10+
+       </strong>
+       <span>
+        College departments
+       </span>
+      </div>
+     </div>
+     <section aria-labelledby="year-2026" class="achievement-year">
+      <h2 class="year-title" id="year-2026">
+       2026 SEASON
+      </h2>
+      <div class="achievement-grid">
+       <article class="achievement-card featured">
+        <span class="achievement-rank">
+         INTERNATIONAL &middot; 2ND PLACE
+        </span>
+        <h3>
+         SAE International Aero Design West
+        </h3>
+        <p>
+         Source materials mention a second-place MATLAB Simulation Award and an overall #16 global Micro Class ranking. These are separate reported results; confirm their exact award categories before publication.
+        </p>
+        <div class="card-footer">
+         Fort Worth, Texas, USA
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         1ST PLACE
+        </span>
+        <h3>
+         ADDC 2026
+        </h3>
+        <p>
+         Unique Technology Development award (listed with SAE Aerothon in the source website)
+        </p>
+        <div class="card-footer">
+         2026 season
+        </div>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="year-2025" class="achievement-year">
+      <h2 class="year-title" id="year-2025">
+       2025 SEASON
+      </h2>
+      <div class="achievement-grid">
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         2ND PLACE OVERALL
+        </span>
+        <h3>
+         SAE Aerothon
+        </h3>
+        <p>
+         Second place overall
+        </p>
+        <div class="card-footer">
+         November 2025 &middot; ₹1,25,000 cash prize
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         1ST PLACE
+        </span>
+        <h3>
+         SAE Drone Design Challenge
+        </h3>
+        <p>
+         Best Technical Presentation
+        </p>
+        <div class="card-footer">
+         May 2025 &middot; ₹10,000 cash prize
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         1ST PLACE
+        </span>
+        <h3>
+         SAE Autonomous Drone Design Challenge
+        </h3>
+        <p>
+         Best Innovation
+        </p>
+        <div class="card-footer">
+         April 2025 &middot; ₹5,000 cash prize
+        </div>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="year-2024" class="achievement-year">
+      <h2 class="year-title" id="year-2024">
+       2024 SEASON
+      </h2>
+      <div class="achievement-grid">
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         2ND PLACE
+        </span>
+        <h3>
+         NITK Drone Racing Competition
+        </h3>
+        <p>
+         Drone racing competition
+        </p>
+        <div class="card-footer">
+         October 18&ndash;20, 2024
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         1ST PLACE
+        </span>
+        <h3>
+         Global Academy of Technology
+        </h3>
+        <p>
+         Drone racing competition
+        </p>
+        <div class="card-footer">
+         November 2024
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         12TH GLOBALLY
+        </span>
+        <h3>
+         SAE International Aero Design West
+        </h3>
+        <p>
+         Global competition placing
+        </p>
+        <div class="card-footer">
+         August 2024
+        </div>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="year-2022" class="achievement-year">
+      <h2 class="year-title" id="year-2022">
+       2022 SEASON
+      </h2>
+      <div class="achievement-grid">
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         3RD PLACE
+        </span>
+        <h3>
+         SAE Aerothon
+        </h3>
+        <p>
+         National competition result
+        </p>
+        <div class="card-footer">
+         ₹50,000 cash prize
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         2ND PLACE
+        </span>
+        <h3>
+         III South India Exhibition
+        </h3>
+        <p>
+         Kalpataru Institute of Technology, Tiptur, Karnataka
+        </p>
+        <div class="card-footer">
+         ₹15,000 cash prize
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         4TH NATIONALLY
+        </span>
+        <h3>
+         AI-VTOL
+        </h3>
+        <p>
+         Techfest, IIT Bombay
+        </p>
+        <div class="card-footer">
+         2022 season
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         GLOBAL RANKINGS
+        </span>
+        <h3>
+         SAE International Aero Design West
+        </h3>
+        <p>
+         9th place in Design Report &middot; 11th place in Technical Presentation
+        </p>
+        <div class="card-footer">
+         2022 season
+        </div>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="year-2020" class="achievement-year">
+      <h2 class="year-title" id="year-2020">
+       2020 SEASON
+      </h2>
+      <div class="achievement-grid">
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         1ST PLACE OVERALL
+        </span>
+        <h3>
+         SAE India
+        </h3>
+        <p>
+         Team Blue Impulse won nationally
+        </p>
+        <div class="card-footer">
+         ₹1,00,000 cash prize
+        </div>
+       </article>
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         8TH GLOBALLY
+        </span>
+        <h3>
+         SAE Aero Design West
+        </h3>
+        <p>
+         Design standings
+        </p>
+        <div class="card-footer">
+         2020 season
+        </div>
+       </article>
+      </div>
+     </section>
+     <section aria-labelledby="year-2018" class="achievement-year">
+      <h2 class="year-title" id="year-2018">
+       2018 SEASON
+      </h2>
+      <div class="achievement-grid">
+       <article class="achievement-card">
+        <span class="achievement-rank">
+         3RD PLACE OVERALL
+        </span>
+        <h3>
+         SAE India
+        </h3>
+        <p>
+         2nd place in Design Report
+        </p>
+        <div class="card-footer">
+         Anna University, Chennai
+        </div>
+       </article>
+      </div>
+     </section>
+     <p class="achievement-closing">
+      And many more milestones on the journey beyond gravity.
+     </p>
+    </section>
+   </div>
+  </main>
+  <footer class="site-footer">
+   <div class="wrap footer-inner">
+    <span>
+     &copy; AeroBMSCE &middot; Recruitment task demonstration
+    </span>
+   </div>
+  </footer>
+ </body>
 </html>
+
