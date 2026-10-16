@@ -1,12 +1,6 @@
 # AeroBMSCE — Web Development Recruitment Task
 
-> **Demonstration redesign of the supplied AeroBMSCE recruitment website. Not the official AeroBMSCE website.**
 
-A three-page static HTML/CSS/JavaScript website using the **original recruitment-team images, text, and site relationships**. No framework, CDN, or external font dependency is required. The requested 12-colour warm aerospace palette is defined in `style.css` under `:root`.
-
-## Run locally
-
-Open `index.html` with Live Server in VS Code, or with a local HTTP server. Use the navigation to visit **Our Journey**, **Partners**, and **Contact**. Keep `index.html`, `journey.html`, `partners.html`, `style.css`, `script.js`, and `images/` together at the repository root for GitHub Pages.
 
 ## 1. What flaws did you identify in the original website?
 
@@ -44,28 +38,6 @@ Open `index.html` with Live Server in VS Code, or with a local HTTP server. Use 
 - Source contact details include **Rajesh (Partnership Head)** and **aerobmsce@bmsce.ac.in**. No separate personal email or direct phone number was supplied, so none was invented.
 - The original asset `images/cad-plane.png` is a transparent aircraft CAD illustration. It is the available fixed-wing model asset, rather than a photographed aircraft on an already-maroon background; the site supplies the maroon presentation panel.
 
-## Checks and limitations
 
-The assets, relative image references, page files and CSS were inspected and JavaScript syntax was checked. **Headless Chromium rendering checks were completed at 360px, 390px, 768px, 1024px and 1440px** by loading the existing HTML/CSS/JavaScript with local images embedded into the test page. The tested pages had no horizontal overflow or script errors; the carousel buttons/dots and the mobile menu worked. The Contact highlight switched correctly after clicking its hash link, and the slideshow advanced at about two seconds when not hovered/focused.
 
-**Limitation:** normal Chromium navigation to local HTTP addresses was blocked by the environment (`ERR_BLOCKED_BY_ADMINISTRATOR`). These are **browser rendering and interaction tests of embedded content**, not live navigation through the deployed site. Browser zoom at **100%, 75%, 50%**, GitHub Pages deployment, and real same-tab navigation still require manual verification. The reported zoom reset was not reproduced or diagnosed.
 
-## Final layout corrections (recruitment review)
-
-- Removed the repeated footer navigation from all three HTML pages, leaving the copyright line **centred**. The working header navigation remains available.
-- On `partners.html#contact`, styled the Contact item as selected while clearing the Partners highlight; no extra JavaScript was needed.
-- Aligned the homepage AeroBMSCE introduction box to the **centre of the left hero panel**, both vertically and horizontally, without covering the team photograph.
-- Reduced the carousel viewport to a **maximum of 430px high** on desktop, with smaller responsive heights, preserving full images (`object-fit: contain`).
-- Set slideshow auto-advance to **2000ms**, keeping existing pause-on-hover, pause-on-focus, and reduced-motion support.
-
-### Manual QA before submitting
-
-- [ ] At **360 / 390 / 768 / 1024 / 1440px**, inspect all pages for overlap, overflow, typography, logos and photo cropping.
-- [ ] At **100% / 75% / 50% browser zoom**, navigate between pages in the same tab; verify zoom remains unchanged. Zoom is controlled by the browser, not the page.
-- [ ] Check sticky navigation and **Contact** anchor; Contact hover/focus, visible active state, keyboard Tab and Escape on the mobile menu.
-- [ ] On **Our Journey**, test slideshow auto advance, arrows, dots, pausing, reduced-motion settings and image resizing.
-- [ ] Verify source facts/contact before public sharing, and check all relative paths after GitHub Pages deployment.
-
-## GitHub Pages deployment
-
-Commit the updated files to the repository root. In **Settings → Pages**, select **Deploy from a branch**, choose your main branch and **/(root)**, then save. A project-site URL will typically be `https://gabrielcse2028.github.io/AeroBMSCE_TASK_REPO/` if the fork has that exact name. Check the URL listed by GitHub Pages after it publishes.
