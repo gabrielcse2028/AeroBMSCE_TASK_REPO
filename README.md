@@ -30,12 +30,7 @@
 
 **How it was resolved:** Removed the conflicting fixed width, made a single clear `#slide` rule use `width: 100%`, `height: 100%`, `object-fit: contain`, and `object-position: center`, and kept navigation buttons and dots. Subsequent screenshots from the actual browser showed the photograph centered while preserving its proportions. This showed why inspecting computed CSS and removing stale rules is preferable to adding repeated overrides.
 
-## Items requiring confirmation before publishing publicly
 
-- The **2026 SAE Aero Design West** entry in the supplied source names a **second-place MATLAB Simulation Award** and an **overall #16 global Micro Class result**. They are different reported rankings; the precise award category and result should be independently confirmed.
-- The club's **75+ projects, 20+ podiums, 50+ research outputs, 10+ participating departments**, its start date, upcoming competitions, R&D subsidy, defence collaboration, prize amounts and promotional reach figures come from the supplied website and are **not independently verified**.
-- Displayed organisations and software companies are **not automatically confirmed formal sponsors**. Formal partnership status requires verification.
-- Source contact details include **Rajesh (Partnership Head)** and **aerobmsce@bmsce.ac.in**. No separate personal email or direct phone number was supplied, so none was invented.
 - The original asset `images/cad-plane.png` is a transparent aircraft CAD illustration. It is the available fixed-wing model asset, rather than a photographed aircraft on an already-maroon background; the site supplies the maroon presentation panel.
 
 
